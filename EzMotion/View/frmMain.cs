@@ -38,38 +38,13 @@ namespace EzMotion
         {
             Gform.fmain = this;
             Gcont.cMainController = new clsMainController();
-       
+          
+
+
             showView(Gform.fMove, true);
         }
 
 
-        private void btnHomeStart_Click(object sender, EventArgs e)
-        {
-            uint duRetCode = 0;
-            //++ 지정한 축에 원점검색을 진행합니다.
-            duRetCode = CAXM.AxmHomeSetStart(m_lAxisNo);
-            if (duRetCode != (uint)AXT_FUNC_RESULT.AXT_RT_SUCCESS)
-                MessageBox.Show(String.Format("AxmHomeSetStart return error[Code:{0:d}]", duRetCode));
-        }
-
-      
-        public uint ConvertComboToAxm(ref ComboBox pCboItem)
-        {
-            if (pCboItem == null) return 0;
-
-            String strText;
-
-            int iCount, iSeldate;
-
-            iCount = pCboItem.Items.Count;
-            if (iCount == 0) return 0;
-            iSeldate = pCboItem.SelectedIndex;
-            if (iSeldate < 0) return 0;
-
-            strText = pCboItem.Text.Substring(0, 2);
-            return Convert.ToUInt32(strText);
-        }
-   
      
 
         public Panel getMainPanel()
@@ -113,6 +88,22 @@ namespace EzMotion
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (Gform.fMove.m_Thread  != null)
+            {
+                Gform.fMove.m_Thread.Abort();
+            }
+          
+            this.BeginInvoke((MethodInvoker)delegate { this.Close(); });
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Gform.fMove.m_Thread != null)
+            {
+                Gform.fMove.m_Thread.Abort();
+               
+            }
+            CAXL.AxlClose();
             this.BeginInvoke((MethodInvoker)delegate { this.Close(); });
         }
 

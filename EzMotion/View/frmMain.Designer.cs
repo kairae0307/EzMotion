@@ -46,7 +46,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1161, 55);
+            this.panel2.Size = new System.Drawing.Size(1668, 55);
             this.panel2.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -60,7 +60,7 @@
             this.tableLayoutPanel1.Controls.Add(this.button2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button3, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(865, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(1372, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -110,7 +110,7 @@
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1161, 55);
+            this.label1.Size = new System.Drawing.Size(1668, 55);
             this.label1.TabIndex = 288;
             this.label1.Text = "EzMotion";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -120,15 +120,16 @@
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 55);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1161, 680);
+            this.mainPanel.Size = new System.Drawing.Size(1668, 906);
             this.mainPanel.TabIndex = 1;
             // 
             // frmMain
             // 
-            this.ClientSize = new System.Drawing.Size(1161, 735);
+            this.ClientSize = new System.Drawing.Size(1668, 961);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel2);
             this.Name = "frmMain";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

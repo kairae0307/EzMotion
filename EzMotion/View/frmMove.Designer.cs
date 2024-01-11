@@ -41,7 +41,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnLoadFile = new System.Windows.Forms.Button();
             this.cboSelAxis = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,6 +50,28 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkHomeState = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.edtMoveDec = new System.Windows.Forms.NumericUpDown();
+            this.edtMoveAcc = new System.Windows.Forms.NumericUpDown();
+            this.edtMoveVel = new System.Windows.Forms.NumericUpDown();
+            this.edtMovePos = new System.Windows.Forms.NumericUpDown();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.btnMove1 = new System.Windows.Forms.Button();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.rdoRel = new System.Windows.Forms.RadioButton();
+            this.rdoAbs = new System.Windows.Forms.RadioButton();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grpSoftwareLimit = new System.Windows.Forms.GroupBox();
             this.chkSwEnable = new System.Windows.Forms.CheckBox();
             this.edtSwPosP = new System.Windows.Forms.NumericUpDown();
@@ -150,10 +171,17 @@
             this.label21 = new System.Windows.Forms.Label();
             this.tmHomeInfo = new System.Windows.Forms.Timer(this.components);
             this.tmDisplay = new System.Windows.Forms.Timer(this.components);
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.groupBox1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.grpHomeSignalLevel.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.edtMoveDec)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edtMoveAcc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edtMoveVel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edtMovePos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.grpSoftwareLimit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edtSwPosP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtSwPosN)).BeginInit();
@@ -175,6 +203,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.edtHomeClrTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtHomeOffset)).BeginInit();
             this.grpHomeSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -190,7 +219,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(493, 211);
+            this.groupBox1.Location = new System.Drawing.Point(951, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(461, 98);
             this.groupBox1.TabIndex = 13;
@@ -306,20 +335,9 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Command Pos :";
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.btnLoadFile);
-            this.groupBox4.Controls.Add(this.cboSelAxis);
-            this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Location = new System.Drawing.Point(493, 153);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(461, 35);
-            this.groupBox4.TabIndex = 14;
-            this.groupBox4.TabStop = false;
-            // 
             // btnLoadFile
             // 
-            this.btnLoadFile.Location = new System.Drawing.Point(336, 10);
+            this.btnLoadFile.Location = new System.Drawing.Point(340, 49);
             this.btnLoadFile.Name = "btnLoadFile";
             this.btnLoadFile.Size = new System.Drawing.Size(116, 21);
             this.btnLoadFile.TabIndex = 2;
@@ -331,7 +349,7 @@
             // 
             this.cboSelAxis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSelAxis.FormattingEnabled = true;
-            this.cboSelAxis.Location = new System.Drawing.Point(112, 10);
+            this.cboSelAxis.Location = new System.Drawing.Point(116, 49);
             this.cboSelAxis.Name = "cboSelAxis";
             this.cboSelAxis.Size = new System.Drawing.Size(220, 20);
             this.cboSelAxis.TabIndex = 1;
@@ -339,7 +357,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 13);
+            this.label1.Location = new System.Drawing.Point(12, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 12);
             this.label1.TabIndex = 0;
@@ -366,6 +384,7 @@
             this.cboHomeLevel.Name = "cboHomeLevel";
             this.cboHomeLevel.Size = new System.Drawing.Size(116, 20);
             this.cboHomeLevel.TabIndex = 13;
+            this.cboHomeLevel.SelectedIndexChanged += new System.EventHandler(this.cboHomeLevel_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -397,13 +416,17 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Controls.Add(this.groupBox4);
+            this.panel1.Controls.Add(this.gridControl1);
             this.panel1.Controls.Add(this.grpSoftwareLimit);
             this.panel1.Controls.Add(this.groupBox11);
             this.panel1.Controls.Add(this.grpOutputSignalMonitor);
             this.panel1.Controls.Add(this.grpInputSignalMonitor);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.groupBox8);
-            this.panel1.Controls.Add(this.groupBox4);
             this.panel1.Controls.Add(this.grpHomeVelocitySetting);
             this.panel1.Controls.Add(this.grpHomeMethodSetting);
             this.panel1.Controls.Add(this.grpHomeSearch);
@@ -411,8 +434,252 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1020, 685);
+            this.panel1.Size = new System.Drawing.Size(1580, 867);
             this.panel1.TabIndex = 292;
+            // 
+            // button2
+            // 
+            this.button2.AllowDrop = true;
+            this.button2.Location = new System.Drawing.Point(1453, 31);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(98, 36);
+            this.button2.TabIndex = 300;
+            this.button2.Text = "Thread Start";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.AllowDrop = true;
+            this.button1.Location = new System.Drawing.Point(1453, 78);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 36);
+            this.button1.TabIndex = 299;
+            this.button1.Text = "Thread Stop";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(1436, 146);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(132, 181);
+            this.richTextBox1.TabIndex = 298;
+            this.richTextBox1.Text = "";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.edtMoveDec);
+            this.groupBox4.Controls.Add(this.edtMoveAcc);
+            this.groupBox4.Controls.Add(this.edtMoveVel);
+            this.groupBox4.Controls.Add(this.edtMovePos);
+            this.groupBox4.Controls.Add(this.btnStop);
+            this.groupBox4.Controls.Add(this.label35);
+            this.groupBox4.Controls.Add(this.label36);
+            this.groupBox4.Controls.Add(this.label37);
+            this.groupBox4.Controls.Add(this.label38);
+            this.groupBox4.Controls.Add(this.label39);
+            this.groupBox4.Controls.Add(this.label40);
+            this.groupBox4.Controls.Add(this.btnMove1);
+            this.groupBox4.Controls.Add(this.label41);
+            this.groupBox4.Controls.Add(this.label42);
+            this.groupBox4.Controls.Add(this.rdoRel);
+            this.groupBox4.Controls.Add(this.rdoAbs);
+            this.groupBox4.Location = new System.Drawing.Point(953, 277);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(461, 141);
+            this.groupBox4.TabIndex = 297;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Position Move";
+            // 
+            // edtMoveDec
+            // 
+            this.edtMoveDec.BackColor = System.Drawing.SystemColors.Window;
+            this.edtMoveDec.DecimalPlaces = 3;
+            this.edtMoveDec.Location = new System.Drawing.Point(129, 109);
+            this.edtMoveDec.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.edtMoveDec.Name = "edtMoveDec";
+            this.edtMoveDec.Size = new System.Drawing.Size(143, 21);
+            this.edtMoveDec.TabIndex = 26;
+            this.edtMoveDec.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // edtMoveAcc
+            // 
+            this.edtMoveAcc.BackColor = System.Drawing.SystemColors.Window;
+            this.edtMoveAcc.DecimalPlaces = 3;
+            this.edtMoveAcc.Location = new System.Drawing.Point(129, 84);
+            this.edtMoveAcc.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.edtMoveAcc.Name = "edtMoveAcc";
+            this.edtMoveAcc.Size = new System.Drawing.Size(143, 21);
+            this.edtMoveAcc.TabIndex = 25;
+            this.edtMoveAcc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // edtMoveVel
+            // 
+            this.edtMoveVel.BackColor = System.Drawing.SystemColors.Window;
+            this.edtMoveVel.DecimalPlaces = 3;
+            this.edtMoveVel.Location = new System.Drawing.Point(129, 59);
+            this.edtMoveVel.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.edtMoveVel.Name = "edtMoveVel";
+            this.edtMoveVel.Size = new System.Drawing.Size(143, 21);
+            this.edtMoveVel.TabIndex = 24;
+            this.edtMoveVel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // edtMovePos
+            // 
+            this.edtMovePos.BackColor = System.Drawing.SystemColors.Window;
+            this.edtMovePos.DecimalPlaces = 3;
+            this.edtMovePos.Location = new System.Drawing.Point(129, 34);
+            this.edtMovePos.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.edtMovePos.Name = "edtMovePos";
+            this.edtMovePos.Size = new System.Drawing.Size(143, 21);
+            this.edtMovePos.TabIndex = 22;
+            this.edtMovePos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // btnStop
+            // 
+            this.btnStop.Location = new System.Drawing.Point(343, 73);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(110, 30);
+            this.btnStop.TabIndex = 21;
+            this.btnStop.Text = "Move Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(273, 114);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(66, 12);
+            this.label35.TabIndex = 20;
+            this.label35.Text = "Unit/Sec^2";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(9, 113);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(118, 12);
+            this.label36.TabIndex = 18;
+            this.label36.Text = "Move Deceleration :";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(273, 90);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(66, 12);
+            this.label37.TabIndex = 17;
+            this.label37.Text = "Unit/Sec^2";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(8, 88);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(118, 12);
+            this.label38.TabIndex = 15;
+            this.label38.Text = "Move Acceleration :";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(273, 64);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(54, 12);
+            this.label39.TabIndex = 14;
+            this.label39.Text = "Unit/Sec";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(9, 63);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(117, 12);
+            this.label40.TabIndex = 12;
+            this.label40.Text = "Move Velocity       :";
+            // 
+            // btnMove1
+            // 
+            this.btnMove1.Location = new System.Drawing.Point(343, 34);
+            this.btnMove1.Name = "btnMove1";
+            this.btnMove1.Size = new System.Drawing.Size(110, 32);
+            this.btnMove1.TabIndex = 10;
+            this.btnMove1.Text = "Move Target";
+            this.btnMove1.UseVisualStyleBackColor = true;
+            this.btnMove1.Click += new System.EventHandler(this.btnMove1_Click);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(273, 39);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(26, 12);
+            this.label41.TabIndex = 8;
+            this.label41.Text = "Unit";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(9, 38);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(118, 12);
+            this.label42.TabIndex = 4;
+            this.label42.Text = "Move Target Pos   :";
+            // 
+            // rdoRel
+            // 
+            this.rdoRel.AutoSize = true;
+            this.rdoRel.Location = new System.Drawing.Point(239, 16);
+            this.rdoRel.Name = "rdoRel";
+            this.rdoRel.Size = new System.Drawing.Size(95, 16);
+            this.rdoRel.TabIndex = 1;
+            this.rdoRel.Text = "[01] Relative";
+            this.rdoRel.UseVisualStyleBackColor = true;
+            // 
+            // rdoAbs
+            // 
+            this.rdoAbs.AutoSize = true;
+            this.rdoAbs.Checked = true;
+            this.rdoAbs.Location = new System.Drawing.Point(131, 16);
+            this.rdoAbs.Name = "rdoAbs";
+            this.rdoAbs.Size = new System.Drawing.Size(100, 16);
+            this.rdoAbs.TabIndex = 0;
+            this.rdoAbs.TabStop = true;
+            this.rdoAbs.Text = "[00] Absolute";
+            this.rdoAbs.UseVisualStyleBackColor = true;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(12, 438);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1525, 420);
+            this.gridControl1.TabIndex = 296;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
             // 
             // grpSoftwareLimit
             // 
@@ -428,7 +695,7 @@
             this.grpSoftwareLimit.Controls.Add(this.label34);
             this.grpSoftwareLimit.Controls.Add(this.chkSwlimitP);
             this.grpSoftwareLimit.Controls.Add(this.chkSwlimitN);
-            this.grpSoftwareLimit.Location = new System.Drawing.Point(493, 504);
+            this.grpSoftwareLimit.Location = new System.Drawing.Point(482, 181);
             this.grpSoftwareLimit.Name = "grpSoftwareLimit";
             this.grpSoftwareLimit.Size = new System.Drawing.Size(465, 128);
             this.grpSoftwareLimit.TabIndex = 295;
@@ -582,7 +849,7 @@
             this.groupBox11.Controls.Add(this.chkInp02);
             this.groupBox11.Controls.Add(this.chkInp01);
             this.groupBox11.Controls.Add(this.chkInp00);
-            this.groupBox11.Location = new System.Drawing.Point(493, 329);
+            this.groupBox11.Location = new System.Drawing.Point(945, 112);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(465, 155);
             this.groupBox11.TabIndex = 294;
@@ -709,14 +976,17 @@
             // 
             // grpOutputSignalMonitor
             // 
+            this.grpOutputSignalMonitor.Controls.Add(this.btnLoadFile);
             this.grpOutputSignalMonitor.Controls.Add(this.label29);
+            this.grpOutputSignalMonitor.Controls.Add(this.cboSelAxis);
+            this.grpOutputSignalMonitor.Controls.Add(this.label1);
             this.grpOutputSignalMonitor.Controls.Add(this.cboAlarmReset);
             this.grpOutputSignalMonitor.Controls.Add(this.groupBox10);
             this.grpOutputSignalMonitor.Controls.Add(this.label30);
             this.grpOutputSignalMonitor.Controls.Add(this.cboServoOn);
-            this.grpOutputSignalMonitor.Location = new System.Drawing.Point(12, 561);
+            this.grpOutputSignalMonitor.Location = new System.Drawing.Point(474, 109);
             this.grpOutputSignalMonitor.Name = "grpOutputSignalMonitor";
-            this.grpOutputSignalMonitor.Size = new System.Drawing.Size(465, 48);
+            this.grpOutputSignalMonitor.Size = new System.Drawing.Size(465, 69);
             this.grpOutputSignalMonitor.TabIndex = 293;
             this.grpOutputSignalMonitor.TabStop = false;
             this.grpOutputSignalMonitor.Text = "< Output Signal Monitor >";
@@ -780,7 +1050,7 @@
             this.grpInputSignalMonitor.Controls.Add(this.chkAlarm);
             this.grpInputSignalMonitor.Controls.Add(this.chkZPhase);
             this.grpInputSignalMonitor.Controls.Add(this.groupBox9);
-            this.grpInputSignalMonitor.Location = new System.Drawing.Point(12, 426);
+            this.grpInputSignalMonitor.Location = new System.Drawing.Point(483, 329);
             this.grpInputSignalMonitor.Name = "grpInputSignalMonitor";
             this.grpInputSignalMonitor.Size = new System.Drawing.Size(465, 97);
             this.grpInputSignalMonitor.TabIndex = 292;
@@ -922,7 +1192,7 @@
             this.groupBox8.Controls.Add(this.label25);
             this.groupBox8.Controls.Add(this.label26);
             this.groupBox8.Controls.Add(this.label28);
-            this.groupBox8.Location = new System.Drawing.Point(493, 20);
+            this.groupBox8.Location = new System.Drawing.Point(484, 4);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(461, 108);
             this.groupBox8.TabIndex = 291;
@@ -1510,25 +1780,30 @@
             // 
             // tmDisplay
             // 
-            this.tmDisplay.Enabled = true;
             this.tmDisplay.Tick += new System.EventHandler(this.tmDisplay_Tick);
             // 
             // frmMove
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 685);
+            this.ClientSize = new System.Drawing.Size(1580, 867);
             this.Controls.Add(this.panel1);
             this.Name = "frmMove";
             this.Text = "frmMove";
             this.Load += new System.EventHandler(this.frmMove_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.grpHomeSignalLevel.ResumeLayout(false);
             this.grpHomeSignalLevel.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.edtMoveDec)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edtMoveAcc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edtMoveVel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edtMovePos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.grpSoftwareLimit.ResumeLayout(false);
             this.grpSoftwareLimit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edtSwPosP)).EndInit();
@@ -1558,6 +1833,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.edtHomeOffset)).EndInit();
             this.grpHomeSearch.ResumeLayout(false);
             this.grpHomeSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1576,7 +1852,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnLoadFile;
         private System.Windows.Forms.ComboBox cboSelAxis;
         private System.Windows.Forms.Label label1;
@@ -1685,5 +1960,28 @@
         private System.Windows.Forms.CheckBox chkInp01;
         private System.Windows.Forms.CheckBox chkInp00;
         private System.Windows.Forms.CheckBox chkSwEnable;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.NumericUpDown edtMoveDec;
+        private System.Windows.Forms.NumericUpDown edtMoveAcc;
+        private System.Windows.Forms.NumericUpDown edtMoveVel;
+        private System.Windows.Forms.NumericUpDown edtMovePos;
+        private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Button btnMove1;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.RadioButton rdoRel;
+        private System.Windows.Forms.RadioButton rdoAbs;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
